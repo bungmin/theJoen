@@ -178,8 +178,6 @@ https://lab.idealidea.co.kr/
 		 - values : 앱에서 자주 사용하는 색(colors.xml) 문구(strings.xml) 등의 자료를 저장.
 
 
-aa
-
 2. 우측 : Code Editor
 	- 프로젝트에 작성하는 코드를 편집하는 공간
 	- xml 파일을 편집할때는 이게 어떻게 표기되는지? 미리 알면 편함. preview
@@ -292,6 +290,48 @@ EC2, S3 => Simple Storage Service, RDS
    2) lines : 몇줄 치의 공간을 차지하게 할지
    3) maxLines : 최대 몇줄 까지만 허용할건지.
 
+=============================================================================================================================================================================================
+1. EditText
+  - 사용자에게 글자 /숫자를 입력받고자 할때 사용법
+2. 사용법
+ <EditText 자동완성 />
+
+3. 주요속성
+ - TextView가 할 수 있는건 EditText도 거의 다 가능. (text, textColor 등등)
+ - 사용자에게 어떤 값을 입력하면 되는지 안내 : hint
+ - 힌트의 색상을 바꾸고 싶다 : textColorHint
+ - 키보드를 상황에 맞게 바꿔주자(포넌 : 전화키패드) : inputType
+ - 줄바꿈 기능을 삭제(한줄로 강제) singleLine = True
+ - 엔터키의 기능을 바꾸고 싶다.(Ex 검색) : imeOptions
+
+
+ImageView
+1. 개요 - 그림파일을 사용자에게 보여주고 싶을때 사용.
+
+2. 사용법 - 앱에서 사용하고자 하는 그림 파일을 drawble 폴더에 추가 작업 필요.
+   구글 ex. 더조은 컴퓨터 로고 다운
+
+   그림파일 추가 방법을
+   1) png(투명 배경 가능) or jpg (투명 표현 불가) 파일을 사용.
+   2) 파일명을 변경해야함. 영어소문자(대문자 X), 숫자로만 파일 이름을 구성해야함.
+   => tje_it_logo01.png
+   3) 해당파일을 복사. ctrl+ C -> 안드로이드 스튜디오 drawble에 붙여넣기
+
+   자주 사용하는 속성
+   src : 어떤 이미지를 표시할지 결정
+    scaleType  : 이미지 파일과 이미지뷰의 모양이 다를 때 어떻게 처리할지 방침. 결정 : 보통 centerCorp 처리
+
+
+Button
+
+1. 개요
+ - 사용자에게 "터치 이벤트" 를 받아내려고 할때 사용법
+ - 사용자에게 행동 의사 결정 표시를 받는 용도.
+
+2. 사용법
+
+
+Switch
 
 
 
@@ -300,6 +340,190 @@ EC2, S3 => Simple Storage Service, RDS
 
 
 
+
+
+ <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="하이루"
+            android:background="@color/colorPrimary"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="테스트"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="25dp"
+            android:text="테스트"
+            android:textStyle="italic|bold"
+            android:textScaleX="0.5"
+            android:textColor="#FF0000"
+
+            />
+    </LinearLayout>
+    <!-- Ctrk + Space : 자동완성 목록 소환 -->
+
+    <TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="안녕하세요!"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="안녕하세요!"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="안녕하세요!"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/the_it_logo"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="User ID"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:singleLine="true"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="전화번호"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="phone"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="비밀번호"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:imeOptions="actionGo"
+        />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        />
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="남성"
+            />
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="여성"
+            />
+
+
+    </RadioGroup>
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="이용 약관에 동의합니다."
+        />
+
+    <ToggleButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textOff="미작동"
+        android:textOn="작동중"
+        />
+
+    <Switch
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="푸시알림 설정"
+        />
+
+    <!--  Shift + F10 : 실행 단축키  -->
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="회원가입"/>
+
+
+공통 속성(디자인 초안 반영용)
+1. 기본 사항
+ - layout_width, layout_height 일단 반드시 작성해야함
+=> match_parent, wrap_content 택일 or 특정숫자 dp값으로 대체(이미지뷰)
+
+ match_parent : 나를 감싸는 부모의 크기를 물려받자!(꽉 채우자!)
+ => 나를 감싸는 ? 컴포넌트(레이아웃)에서 제일 가까운 layout
+  * 최상위 layout의 부모는 핸드폰 스크린 사이즈 => match_parent : 꽉 채워놓고 조절하자!!
+
+  wrap_content : 내가 가진 내용물 (Layout - 컴포넌트, 컴포넌트 - text 등의 실제 내용물)의 크기 만큼만. 필요한 만큼만 사용.
+   예) 글자 적힌 만큼만 활용하겠다.
+
+
+2. 배치 조절
+	1) gravity : 레이아웃/컴포넌트가 내용물을 어느 쪽으로 몰아줄지.
+		기본값 : 좌상단으로  쏠리게 되어있음.
+	=> ex) 콤포넌트를 오른쪽으로 보내고 싶다 : 컴포넌트의 부모 레이아웃의 gravity를 right로 설정..
+	ex: textview의 글씨를 오른쪽으로 보내고싶다 : 해당 textview의 gravity를 right로 설정. 가로 크기가 wrap_content이면 아무 변화도 없을 것.
+
+  2) margin (바깥 여백, 이전 요소와의 간격) , padding (내부간격)
+     padding은 margin을 일괄적으로 처리할 수 있을 것 같을때 사용하면 편리함.
 
 
 
