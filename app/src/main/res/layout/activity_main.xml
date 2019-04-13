@@ -9,23 +9,32 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="15dp">
+        android:layout_height="30dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="하이루"
+            android:background="@color/colorPrimary"
             />
-
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="테스트"
             />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="25dp"
+            android:text="테스트"
+            android:textStyle="italic|bold"
+            android:textScaleX="0.5"
+            android:textColor="#FF0000"
 
-
+            />
     </LinearLayout>
+    <!-- Ctrk + Space : 자동완성 목록 소환 -->
 
     <TextView
     android:layout_width="wrap_content"
