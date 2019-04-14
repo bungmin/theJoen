@@ -10,38 +10,37 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    TextView loginText;
-    TextView pwText;
+    TextView userIdEdit;
+    TextView userPwEdit;
     TextView wasabiText;
     Button okLogin;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        loginText = findViewById(R.id.userId);
-        pwText = findViewById(R.id.passwd);
+        userIdEdit = findViewById(R.id.userIdEdit);
+        userPwEdit = findViewById(R.id.userPwEdit);
         okLogin = findViewById(R.id.okLogin);
         wasabiText = findViewById(R.id.wasabiText);
+
+//      okLogin.setOnClickListener 하고 난다음에  new OnClickListener()로 재료
 
         okLogin.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View view) {
-                Log.d("확인", "터치이벤트 발생 했다");
 
-//               ctrl + k
-                String loginText2 = loginText.getText().toString();
-                String passwdText= pwText.getText().toString();
+                String loginText2 = userIdEdit.getText().toString();
+                String passwdText= userPwEdit.getText().toString();
 
                 Toast.makeText(MainActivity.this,  "ID : "+ loginText2 , Toast.LENGTH_SHORT).show();
 
                 wasabiText.setText("ID : "+ loginText2 + " , PW: " + passwdText);
 
-
+                String.format("ID : %s, PW : %s", loginText2, passwdText);
+                //wasabiText.setText("ID : "+ loginText2 + " , PW: " + passwdText);
 
             }
 
