@@ -37,9 +37,8 @@ public class MainActivity extends AppCompatActivity {
 
                 Toast.makeText(MainActivity.this,  "ID : "+ loginText2 , Toast.LENGTH_SHORT).show();
 
-                wasabiText.setText("ID : "+ loginText2 + " , PW: " + passwdText);
-
-                String.format("ID : %s, PW : %s", loginText2, passwdText);
+                String content = String.format("ID : %s, PW : %s", loginText2, passwdText);
+                wasabiText.setText(content);
                 //wasabiText.setText("ID : "+ loginText2 + " , PW: " + passwdText);
 
             }
