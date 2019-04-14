@@ -31,12 +31,16 @@
             android:layout_marginTop="20dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="User ID"/>
+            android:hint="User ID"
+            android:id="@+id/userId"
+            />
         <EditText
             android:layout_marginTop="15dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Password"/>
+            android:hint="Password"
+            android:id="@+id/passwd"
+            />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -49,7 +53,9 @@
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
-                android:text="로그인"/>
+                android:text="로그인"
+                android:id="@+id/okLogin"
+                />
 
             <Button
                 android:visibility="visible"
@@ -73,6 +79,7 @@
         android:layout_marginTop="30dp"
         android:text="WASAVI LOGISTICS"
         android:textColor="#FFFFFF"
+        android:id="@+id/wasabiText"
         />
 
 
